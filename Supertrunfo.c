@@ -10,6 +10,8 @@ int main (){
     float area1, area2;
     float pib1, pib2;
     int atracoes1, atracoes2; //variaveis de pontos turisticos
+    float dp1, dp2; // Densidade populacional
+    float pibpc1, pibpc2; // PIB per capita
     
     /*Abaixo será inserido as informacoes da carta 1*/
     printf("|Insira das infomações da Carta 1|\n\n");
@@ -23,10 +25,12 @@ int main (){
     scanf("%lu", &populacao1);
     printf("Área em km2: ");
     scanf("%f", &area1);
-    printf("Renda per capita: ");
+    printf("PIB: ");
     scanf("%f", &pib1);
     printf("Quantidade de Pontos Turisticos: ");
     scanf("%d", &atracoes1);
+    dp1 = (float)(populacao1/area1);
+    pibpc1 = (float)(pib1/populacao1);
     
     /*Abaixo será exibido as informacoes inseridas da carta 1*/
     printf(" ___________________________________\n");
@@ -37,6 +41,10 @@ int main (){
     printf("|Área: %.2f km2                     \n", area1);
     printf("|PIB: %.2f                          \n", pib1);
     printf("|Pontos turisticos: %d              \n", atracoes1);
+    printf("|Densidade Populacional: %.2f hab/km2\n", dp1);
+    printf("|PIB per capita: %.2f reais         \n", pibpc1);
+
+
     printf("|___________________________________\n");
     printf("\n\n");
   
@@ -53,10 +61,12 @@ int main (){
     scanf("%lu", &populacao2);
     printf("Área em km2: ");
     scanf("%f", &area2);
-    printf("Renda per capita: ");
+    printf("PIB: ");
     scanf("%f", &pib2);
     printf("Quantidade de Pontos Turisticos: ");
     scanf("%d", &atracoes2);
+    dp2 = (float)(populacao2/area2);
+    pibpc2 = (float)(pib2/populacao2);
     
     /*Abaixo será exibido as informacoes inseridas da carta 2*/
     printf(" ___________________________________\n");
@@ -67,6 +77,8 @@ int main (){
     printf("|Área: %.2f km2                     \n", area2);
     printf("|PIB: %.2f                          \n", pib2);
     printf("|Pontos turisticos: %d              \n", atracoes2);
+    printf("|Densidade Populacional: %.2f hab/km2\n", dp2);
+    printf("|PIB per capita: %.2f reais         \n", pibpc2);
     printf("|___________________________________\n");
     printf("\n\n");
 
