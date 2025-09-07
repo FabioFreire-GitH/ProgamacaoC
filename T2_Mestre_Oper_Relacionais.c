@@ -20,5 +20,13 @@ int main() {
     printf("x >=c: %d\n", x>=c);
     printf("O valor ASCII de %c é: %d\n", c, c);
 
+    int num = 10;
+    float result = 10.0;
+
+    int comparison = (float)num == result;
+
+    printf("num == result: %d\n", comparison);
+
+
     return 0;
 }
