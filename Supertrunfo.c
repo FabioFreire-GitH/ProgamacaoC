@@ -12,7 +12,8 @@ int main (){
     int atracoes1, atracoes2; //variaveis de pontos turisticos
     float dp1, dp2; // Densidade populacional
     float pibpc1, pibpc2; // PIB per capita
-    
+    double superPoder1, superPoder2; // Variaveis que irão armazenar o valor do super poder de cada carta
+
     /*Abaixo será inserido as informacoes da carta 1*/
     printf("|Insira das infomações da Carta 1|\n\n");
     printf("Insira a Letra do Estado (A ate H): ");
@@ -31,6 +32,7 @@ int main (){
     scanf("%d", &atracoes1);
     dp1 = (float)(populacao1/area1);
     pibpc1 = (float)(pib1/populacao1);
+    superPoder1 = (double)(populacao1 + area1 + pib1 + atracoes1 + (1 / dp1) + pibpc1); //Cálculo do super poder da carta 1
     
     /*Abaixo será exibido as informacoes inseridas da carta 1*/
     printf(" ___________________________________\n");
@@ -43,8 +45,7 @@ int main (){
     printf("|Pontos turisticos: %d              \n", atracoes1);
     printf("|Densidade Populacional: %.2f hab/km2\n", dp1);
     printf("|PIB per capita: %.2f reais         \n", pibpc1);
-
-
+    printf("|Super Poder: %.2f                   \n", superPoder1); //Exibição do super poder da carta 1 
     printf("|___________________________________\n");
     printf("\n\n");
   
@@ -67,6 +68,7 @@ int main (){
     scanf("%d", &atracoes2);
     dp2 = (float)(populacao2/area2);
     pibpc2 = (float)(pib2/populacao2);
+    superPoder2 = (double)(populacao2 + area2 + pib2 + atracoes2 + (1 / dp2) + pibpc2); //Cálculo do super poder da carta 2
     
     /*Abaixo será exibido as informacoes inseridas da carta 2*/
     printf(" ___________________________________\n");
@@ -79,6 +81,7 @@ int main (){
     printf("|Pontos turisticos: %d              \n", atracoes2);
     printf("|Densidade Populacional: %.2f hab/km2\n", dp2);
     printf("|PIB per capita: %.2f reais         \n", pibpc2);
+    printf("|Super Poder: %.2f                   \n", superPoder2); //Exibição do super poder da carta 2
     printf("|___________________________________\n");
     printf("\n\n");
 
