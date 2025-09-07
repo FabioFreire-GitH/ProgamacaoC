@@ -85,6 +85,28 @@ int main (){
     printf("|___________________________________\n");
     printf("\n\n");
 
+    /*Abaixo será feita a comparação entre as cartas*/
+    printf("Comparação entre as cartas:\n");
+    printf("O Super Poder da Carta 1 é maior que o Super Poder da Carta 2? %d\n", superPoder1 > superPoder2);
+    printf("O Super Poder da Carta 2 é maior que o Super Poder da Carta 1? %d\n", superPoder2 > superPoder1);
+    printf("O Super Poder da Carta 1 é igual ao Super Poder da Carta 2? %d\n", superPoder1 == superPoder2);
+    
+    //abaixo serão feitas as comparações entre os atributos individuais das cartas
+    printf("A Carta 1 tem mais Pontos Turisticos que a Carta 2? %d\n", atracoes1 > atracoes2);
+    printf("A Carta 2 tem mais Pontos Turisticos que a Carta 1? %d\n", atracoes2 > atracoes1);
+    printf("A Carta 1 tem mais População que a Carta 2? %d\n", populacao1 > populacao2);
+    printf("A Carta 2 tem mais População que a Carta 1? %d\n", populacao2 > populacao1);
+    printf("A Carta 1 tem mais Área que a Carta 2? %d\n", area1 > area2);
+    printf("A Carta 2 tem mais Área que a Carta 1? %d\n", area2 > area1);
+    printf("A Carta 1 tem mais PIB que a Carta 2? %d\n", pib1 > pib2);
+    printf("A Carta 2 tem mais PIB que a Carta 1? %d\n", pib2 > pib1);
+    printf("A Carta 1 tem menos Densidade Populacional que a Carta 2? %d\n", dp1 < dp2);
+    printf("A Carta 2 tem menos Densidade Populacional que a Carta 1? %d\n", dp2 < dp1);
+    
+    // NAO UTILIZEI O IF POIS AINDA NAO APRENDI, MAS ACHO QUE DA PRA MELHORAR ISSO AQUI EM CIMA.
+
+
+
 return 0;
 
 
