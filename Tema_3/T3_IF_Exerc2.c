@@ -10,6 +10,8 @@ int main (){
 
     if (temperatura > 30.0){
         printf("Está calor\n\n");
+    }else{
+        printf("Não está calor\n\n");
     }
         return 0;
 }
