@@ -85,9 +85,11 @@ int main (){
     printf("|___________________________________\n");
     printf("\n");
 
-    printf("Compara vencedor\n");
-    printf("Escolha uma atributo da carta (1 a 7):\n");
+    printf(" ________________________________________\n");
+    printf("|          Compara vencedor              |\n");
+    printf("|Escolha uma atributo da carta (1 a 7):  ");
     scanf("%d", &opcao);
+    printf("|________________________________________|\n\n");
     
     if (opcao == 1){
         printf("Comparação de cartas (atributo: População)\n");
