@@ -21,7 +21,7 @@ int main (){
     printf("Insira um codigo (01-04): ");
     scanf("%s", codigo1);
     printf("Insira o nome da Cidade: ");
-    scanf(" %19[^\n]", cidade1);
+    scanf(" %19[^\n]", cidade1); // o 19 limita o tamanho do nome da cidade para evitar overflow
     printf("População: ");
     scanf("%lu", &populacao1);
     printf("Área em km2: ");

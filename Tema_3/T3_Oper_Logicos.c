@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int a = 5, b = -10, c = 1;
+    int a = -5, b = -10, c = 1;
     
     // Operador AND lógico (&&)
     if (a > 0 && b > 0) {
