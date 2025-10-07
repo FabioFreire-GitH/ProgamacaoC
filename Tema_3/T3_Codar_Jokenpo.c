@@ -14,7 +14,7 @@ int main (){
     printf("Escolha: ");
     scanf("%d", &escolhaJogador);
 
-    escolhaComputador = rand() %3 +1; // Gera um número aleatório entre 1 e 3
+    escolhaComputador = rand() %3 +1; // Gera um número aleatório entre 1 e 3z
 
     switch (escolhaJogador){
         case 1:
