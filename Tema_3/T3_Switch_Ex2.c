@@ -23,9 +23,8 @@ int main() {
             if (palpite == numeroSecreto) {
                 printf ("Parabens! Voce acertou o numero secreto!\n");
             } else {
-                printf ("Que pena! Voce errou. O numero secreto era %d.\n", numeroSecreto);
+                printf ("Que pena! Voce errou. O numero secreto era %d.\n\n", numeroSecreto);
             }
-            printf("Numero secreto %d\n", numeroSecreto); // Apenas para teste, remova esta linha no jogo real
             break;
         case 2:
             printf("Explicacao das regras do jogo:\n");
