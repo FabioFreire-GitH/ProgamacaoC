@@ -17,6 +17,8 @@ int main() {
 
     } while(numero %2 != 0);
 
+        printf("Você digitou um número par, o programa será encerrado!\n");
+
     return 0;
 
 }
