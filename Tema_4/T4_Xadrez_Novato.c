@@ -26,7 +26,7 @@ int main() {
         printf("Distancia invalida. Escolha um valor entre 1 e 8.\n");
     }
     switch (peca) {
-        case 'T':
+        case 'T': //torre
         case 't':
             if (direcao1 == 3) { //diagonal
                 printf("A torre não pode se mover na direcao diagonal.\n");
@@ -48,6 +48,11 @@ int main() {
                }
            }
            break;
+
+
+
+
+
         }
 
 
