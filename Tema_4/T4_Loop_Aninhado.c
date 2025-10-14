@@ -11,7 +11,7 @@ int main() {
         }
     }
 
-    while (i<=5) { // Loop externo
+    /*while (i<=5) { // Loop externo
         j=1;
         while (j<=3) { // Loop interno
             printf("i = %d, j = %d\n", i, j);
@@ -19,6 +19,6 @@ int main() {
         }
         i++;
     }
-
+*/
     return 0;
 }
