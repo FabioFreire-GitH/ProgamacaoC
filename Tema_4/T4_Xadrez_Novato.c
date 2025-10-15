@@ -8,7 +8,9 @@
 int main() {
     int direcao, distancia;
     char peca;
-    printf("Escolha a peca (T para torre, B para bispo, R para rainha): ");
+    int movimentoCompleto = 1; // flag para controlar o loop do cavalo
+
+    printf("Escolha a peca (T para Torre, B para Bispo, R para Rainha, C para Cavalo): ");
     scanf(" %c", &peca);
  
     switch (peca){
@@ -82,6 +84,38 @@ int main() {
                 }      
             }
             break;
+            case 'C': //cavalo com loop aninhado
+            case 'c':
+            printf ("Escolha a direção (1 para 'L' para Cima e Direita , 2 para 'L' para Cima e Esquerda, 3 para 'L' para Baixo e Direita, 4 para 'L' para Baixo e Esquerda): ");
+            scanf ("%d", &direcao);
+                if (direcao < 1 || direcao > 4) {
+                printf("Direcao invalida. Escolha 1, 2, 3 ou 4.\n");
+                }
+                while (movimentoCompleto--) { // loop para realizar o movimento em 'L'
+                    if (direcao == 1){
+                        for (int i = 0; i < 2; i++) { // mover 2 casas para cima
+                            printf("Movendo cavalo %d casa para cima\n", i + 1);
+                        }
+                        printf ("Movendo cavalo 1 casa para direita\n");
+                    } else if (direcao == 2){
+                            for (int i = 0; i < 2; i++) { // mover 2 casas para cima
+                                printf("Movendo cavalo %d casa para cima\n", i + 1);
+                            }
+                            printf ("Movendo cavalo 1 casa para esquerda\n");
+                        } else if (direcao == 3){
+                                for (int i = 0; i < 2; i++) { // mover 2 casas para baixo
+                                    printf("Movendo cavalo %d casa para baixo\n", i + 1);
+                                }
+                                printf ("Movendo cavalo 1 casa para direita\n");
+                            } else if (direcao == 4){
+                                    for (int i = 0; i < 2; i++) { // mover 2 casas para baixo
+                                        printf("Movendo cavalo %d casa para baixo\n", i + 1);
+                                    }
+                                    printf ("Movendo cavalo 1 casa para esquerda\n");
+                                }
+                } 
+                break;
+                            
         default:
             printf("Peca invalida. Escolha T, B ou R.\n");
             break;  
