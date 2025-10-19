@@ -1,25 +1,58 @@
 #include <stdio.h>
 //criar void para cada movimento de peça
-void movertorre(int casas, char sentido[30]) {
-    if (casas > 0) {
-        printf("Movendo torre %d casa para %s \n", casas, sentido[30]);
-        movertorre(casas - 1, sentido[30]);
+void movertorre(int casasrestantes, int direcao, int distancia) { // loop recursivo da torre
+    if (casasrestantes <= 0) {
+        printf("***Movimento da torre completo.***\n");
+        return;
     }
- 
+    if (casasrestantes == distancia) {
+        printf("\n");
+        printf("Iniciando movimento de %d casa(s) para torre \n", distancia);
+        printf("\n");
+    }
+    if (direcao == 1) { // cima
+        printf("Movendo torre para cima\n");
+    } else if (direcao == 2) { // baixo
+        printf("Movendo torre para baixo\n");
+    } else if (direcao == 3) { // esquerda
+        printf("Movendo torre para esquerda\n");
+    } else if (direcao == 4) { // direita
+        printf("Movendo torre para direita\n");
+    }
+    movertorre(casasrestantes - 1, direcao, distancia);
 }
-void bispo() {
+void moverbispo(int distancia, int direcao) { // loop aninhado do bispo
+    for (int i = 1; i <= distancia; i++) {
+        if (direcao == 1) { // Diagonal Superior Esquerda
+            printf("Movendo bispo %d casa(s) para Diagonal Superior Esquerda\n", i);
+        } else if (direcao == 2) { // Diagonal Superior Direita
+            printf("Movendo bispo %d casa(s) para Diagonal Superior Direita\n", i);
+        } else if (direcao == 3) { // Diagonal Inferior Esquerda
+            printf("Movendo bispo %d casa(s) para Diagonal Inferior Esquerda\n", i);
+        } else if (direcao == 4) { // Diagonal Inferior Direita
+            printf("Movendo bispo %d casa(s) para Diagonal Inferior Direita\n", i);
+        }      
+    }
     
-    //codigo do bispo
+    
 }
-void rainha() { 
-    //codigo da rainha
+
+void moverrainha(int distancia, int direcao) { 
+    for (int i = 1; i <= distancia; i++) {
+        if (direcao == 1) { // horizontal
+            printf("Movendo rainha %d casa(s) para horizontal\n", i);
+        } else if (direcao == 2) { // vertical
+            printf("Movendo rainha %d casa(s) para vertical\n", i);
+        } else if (direcao == 3) { // diagonal
+            printf("Movendo rainha %d casa(s) para diagonal\n", i);
+        }      
+    }
 }
 
 
 int main() {
     int distancia, direcao;
     char peca;
-    char chardirecao[30];
     int movimentoCompleto = 1; // flag para controlar o loop do cavalo
 
     printf("Escolha a peca (T para Torre, B para Bispo, R para Rainha, C para Cavalo): ");
@@ -33,21 +66,12 @@ int main() {
             if (direcao < 1 || direcao > 4) {
             printf("Direcao invalida. Escolha 1, 2, 3 ou 4.\n");
             }
-            if (direcao == 1) {
-                chardirecao[30] = "Cima";
-            } else if (direcao == 2) {
-                chardirecao[30] = "Baixo";
-            } else if (direcao == 3) {
-                chardirecao[30] = "Esquerda";
-            } else if (direcao == 4) {
-                chardirecao[30] = "Direita";
-            }
             printf("Escolha a distancia (1 a 8): ");
             scanf("%d", &distancia);
             if (distancia < 1 || distancia > 8) {
             printf("Distancia invalida. Escolha um valor entre 1 e 8.\n");
             }
-            movertorre(distancia, chardirecao);
+            movertorre(distancia, direcao, distancia);
           
         break;
         case 'B': //bispo
@@ -62,18 +86,9 @@ int main() {
             if (distancia < 1 || distancia > 8) {
             printf("Distancia invalida. Escolha um valor entre 1 e 8.\n");
             }
-            for (int i = 1; i <= distancia; i++) {
-                if (direcao == 1) { // Diagonal Superior Esquerda
-                    printf("Movendo bispo %d casa(s) para Diagonal Superior Esquerda\n", i);
-                } else if (direcao == 2) { // Diagonal Superior Direita
-                    printf("Movendo bispo %d casa(s) para Diagonal Superior Direita\n", i);
-                } else if (direcao == 3) { // Diagonal Inferior Esquerda
-                    printf("Movendo bispo %d casa(s) para Diagonal Inferior Esquerda\n", i);
-                } else if (direcao == 4) { // Diagonal Inferior Direita
-                    printf("Movendo bispo %d casa(s) para Diagonal Inferior Direita\n", i);
-                }      
-            }
-            break;
+            moverbispo(distancia, direcao);
+            
+        break;
         case 'R': //rainha
         case 'r':
         printf ("Escolha a direção (1 para horizontal, 2 para vertical ou 3 para diagonal): ");
@@ -86,16 +101,8 @@ int main() {
             if (distancia < 1 || distancia > 8) {
             printf("Distancia invalida. Escolha um valor entre 1 e 8.\n");
             }
-            for (int i = 1; i <= distancia; i++) {
-                if (direcao == 1) { // horizontal
-                    printf("Movendo rainha %d casa(s) para horizontal\n", i);
-                } else if (direcao == 2) { // vertical
-                    printf("Movendo rainha %d casa(s) para vertical\n", i);
-                } else if (direcao == 3) { // diagonal
-                    printf("Movendo rainha %d casa(s) para diagonal\n", i);
-                }      
-            }
-            break;
+            moverrainha(distancia, direcao);
+        break;
             case 'C': //cavalo com loop aninhado
             case 'c':
             printf ("Escolha a direção (1 para 'L' para Cima e Direita , 2 para 'L' para Cima e Esquerda, 3 para 'L' para Baixo e Direita, 4 para 'L' para Baixo e Esquerda): ");
