@@ -3,6 +3,7 @@
 void movertorre(int casasrestantes, int direcao, int distancia) { // loop recursivo da torre
     if (casasrestantes <= 0) {
         printf("***Movimento da torre completo.***\n");
+        printf("\n");
         return;
     }
     if (casasrestantes == distancia) {
@@ -22,21 +23,25 @@ void movertorre(int casasrestantes, int direcao, int distancia) { // loop recurs
     movertorre(casasrestantes - 1, direcao, distancia);
 }
 
-void moverbispo(int distancia, int direcao) { // loop aninhado do bispo
-    for (int i = 1; i <= distancia; i++) {
-        if (direcao == 1) { // Diagonal Superior Esquerda
-            printf("Movendo bispo %d casa(s) para Diagonal Superior Esquerda\n", i);
-        } else if (direcao == 2) { // Diagonal Superior Direita
-            printf("Movendo bispo %d casa(s) para Diagonal Superior Direita\n", i);
-        } else if (direcao == 3) { // Diagonal Inferior Esquerda
-            printf("Movendo bispo %d casa(s) para Diagonal Inferior Esquerda\n", i);
-        } else if (direcao == 4) { // Diagonal Inferior Direita
-            printf("Movendo bispo %d casa(s) para Diagonal Inferior Direita\n", i);
-        }      
+void moverbispo(int qtdcasas, int direcao) { // loop aninhado do bispo
+    printf("\n");
+    printf("Iniciando movimento de %d casa(s) para bispo \n", qtdcasas);
+    printf("\n");
+    if (direcao == 1) { // diagonal superior direita
+        for (int i = 1; i <= qtdcasas; i++) {
+            for (int j = 0; j < 1; j++) {
+                printf("Movendo bispo %d casa(s) para diagonal superior direita\n", i);
+            }
+            
+        }
+    
     }
-    
-    
+
+    printf("\n");
+    printf("Finalizando movimento do bispo\n");
+    printf("\n");
 }
+
 
 void moverrainha(int distancia, int direcao) { 
     for (int i = 1; i <= distancia; i++) {
@@ -77,7 +82,7 @@ int main() {
         break;
         case 'B': //bispo
         case 'b':
-        printf ("Escolha a direção (1 para Diagonal Superior Esquerda, 2 para Diagonal Superior Direita, 3 para Diagonal Inferior Esquerda ou 4 para Diagonal Inferior Direita): ");
+        printf ("Escolha a direção (1 para Diagonal Superior Direita, 2 para Diagonal Superior Esquerda, 3 para Diagonal Inferior Direita ou 4 para Diagonal Inferior Esquerda): ");
         scanf ("%d", &direcao);
             if (direcao < 1 || direcao > 4) {
             printf("Direcao invalida. Escolha 1, 2, 3 ou 4.\n");
@@ -88,7 +93,7 @@ int main() {
             printf("Distancia invalida. Escolha um valor entre 1 e 8.\n");
             }
             moverbispo(distancia, direcao);
-            
+          
         break;
         case 'R': //rainha
         case 'r':
