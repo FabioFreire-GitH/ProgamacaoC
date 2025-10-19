@@ -21,6 +21,7 @@ void movertorre(int casasrestantes, int direcao, int distancia) { // loop recurs
     }
     movertorre(casasrestantes - 1, direcao, distancia);
 }
+
 void moverbispo(int distancia, int direcao) { // loop aninhado do bispo
     for (int i = 1; i <= distancia; i++) {
         if (direcao == 1) { // Diagonal Superior Esquerda
