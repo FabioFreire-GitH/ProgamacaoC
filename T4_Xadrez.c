@@ -1,14 +1,14 @@
 #include <stdio.h>
-//criar void para cada peca
-void torre(int casas, char direcao) {
+//criar void para cada movimento de peça
+void movertorre(int casas, char sentido[30]) {
     if (casas > 0) {
-        printf("Movendo torre %d casa(s) na direcao %c\n", casas, direcao);
-        torre(casas - 1, direcao);
+        printf("Movendo torre %d casa para %s \n", casas, sentido[30]);
+        movertorre(casas - 1, sentido[30]);
     }
  
-
 }
 void bispo() {
+    
     //codigo do bispo
 }
 void rainha() { 
@@ -16,14 +16,10 @@ void rainha() {
 }
 
 
-//programa para simular o movimento da torre, bispo e rainha num jogo de xadrez
-//utilizando for, while ou do..while
-//Escolha a direção das pecas: cima, baixo, esquerda, direita e diagonal
-//utilizando tabuleiro 8x8
-
 int main() {
-    int direcao, distancia;
+    int distancia, direcao;
     char peca;
+    char chardirecao[30];
     int movimentoCompleto = 1; // flag para controlar o loop do cavalo
 
     printf("Escolha a peca (T para Torre, B para Bispo, R para Rainha, C para Cavalo): ");
@@ -37,23 +33,23 @@ int main() {
             if (direcao < 1 || direcao > 4) {
             printf("Direcao invalida. Escolha 1, 2, 3 ou 4.\n");
             }
+            if (direcao == 1) {
+                chardirecao[30] = "Cima";
+            } else if (direcao == 2) {
+                chardirecao[30] = "Baixo";
+            } else if (direcao == 3) {
+                chardirecao[30] = "Esquerda";
+            } else if (direcao == 4) {
+                chardirecao[30] = "Direita";
+            }
             printf("Escolha a distancia (1 a 8): ");
             scanf("%d", &distancia);
             if (distancia < 1 || distancia > 8) {
             printf("Distancia invalida. Escolha um valor entre 1 e 8.\n");
             }
-            for (int i = 1; i <= distancia; i++) {
-                if (direcao == 1) { // cima
-                    printf("Movendo torre %d casa(s) para cima\n", i);
-                } else if (direcao == 2) { // baixo
-                    printf("Movendo torre %d casa(s) para baixo\n", i);
-                } else if (direcao == 3) { // esquerda
-                    printf("Movendo torre %d casa(s) para esquerda\n", i);
-                } else if (direcao == 4) { // direita
-                    printf("Movendo torre %d casa(s) para direita\n", i);
-                }
-            }
-            break;
+            movertorre(distancia, chardirecao);
+          
+        break;
         case 'B': //bispo
         case 'b':
         printf ("Escolha a direção (1 para Diagonal Superior Esquerda, 2 para Diagonal Superior Direita, 3 para Diagonal Inferior Esquerda ou 4 para Diagonal Inferior Direita): ");
