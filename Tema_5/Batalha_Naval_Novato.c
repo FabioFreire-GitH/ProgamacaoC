@@ -50,12 +50,12 @@ int main () {
         }
         printf("\n");   
     }
-    // Incluir no tabuleiro dois navios na diagonal com valor '3' em toda diagonal
-    for (int i = 0; i < 10; i++) {
+    // Incluir no tabuleiro dois navios na diagonal com valor '3' em duas diagonais diferentes
+    for (int i = 0; i < 3; i++) {
         tabuleiro[i][i] = 3; // Navios na diagonal principal
     }
-    
-    for (int i = 0; i < 10; i++) {
+
+    for (int i = 0; i < 3; i++) {
         tabuleiro[i][9 - i] = 3; // Navios na diagonal secundária
     }
 
