@@ -1,0 +1,77 @@
+/* Arvores Binarias (Aula 1 e 2)
+- Nós: Elementos da árvore.
+    - Cada nó pode ser pai (se tiver filhos) ou folha (se nao tiver filhos)
+- Raiz: Primeiro nó da árvore e o unico em cada arvore binaria.
+- Filhos: Nós descendentes de um pai.
+    - Cada pai pode ter ATÉ DOIS FILHOS.
+- Folhas: Nós que NÃO têm filhos.
+- Arestas: Conexões entre nós.
+- Altura da árvore: Distância da raiz até a folha mais distante.
+- Profundidade de um nó: Distância entre um nó e a raiz.
+
+- Árvores binárias usam nós concectados via Ponteiros ou referencias 
+em linguagem C.
+- Operações principais:
+    - inserção;
+    - busca;
+    - remoção.
+- Recursividade é frequentemente usada para percorrer e manipular a
+árvore. 
+
+- Árvores na compuitação:
+    - Árvores Binarias de Busca (BST)
+        - Organiza os dados para busca eficiente.
+    - Expressões Matemáticas
+        - Operadores nos nós internos, operando nas folhas.
+        - Permite cálculo de expressões de forma precis com 
+        pecursos na árvore.
+
+Aprofundamento téorico sobre árvore binárias. 
+
+- Tipos de Árvores:
+    - Árvore Binária Completa: Todos os niveis totalmente 
+    peenchidos, com exceção talvez do ultimo, que deve
+    estar o mais a esquerda possível.
+    - Árvore Extritamente Binária: Cada nó tem exatamente
+    dois filhos ou nenhum (não existe nó com apenas um 
+    filho).
+    - Árvore Cheia: Todos os nós têm filhos, e todas as folhas
+    estão no mesmo nível.
+    - Árvore binária de busca (BST - Binary Search Tree): Para
+    cada nó, valores à esquerda são menores, à direita são maiores; 
+    permite busca eficiente.
+
+- Propriedades importantes:
+    - Altura: Caminho mais londo da raiz ate uma folha.
+        - Influencia o desempenho; menor altura = Operações
+        mais rápidas.
+    - Profundidade: Número de arestas entre a raiz e o nó.
+
+- Subárvore: Qualquer nó com seus descendentes forma uma nova árvore.
+    - "Uma árvore menor dentro da árvore maior".
+
+- Árvore balanceada: A diferença de altura entre as subárvores de 
+cada nó é limitada, geralmente por 1.
+
+- Árvore desbalanceada: A diferença de altura entre as subárvores
+de seus nós é significativa.
+    - Pode levar a queda no desempenho.
+    - Pior caso: O(n), deveria ser O(log n).
+
+- Exemplos práticos:
+    - Compiladores
+        - Uso de árvores para análise sintática e representação
+        de expressões.
+    - Bancos de dados
+        - Árvores B e B+ para indexação e busca eficiente de 
+        registros.
+    - Inteligência artificial
+        - Árvores de decisão para classificar dados e automatizar 
+        escolhas.
+    - Compressão de dados
+        - Árvores binárias para códigos otimizados (exemplo: Huffman).
+    - Jogos
+        - Representação das possíveis jogadas e decisões em algoritmos 
+        de busca. 
+*/
+

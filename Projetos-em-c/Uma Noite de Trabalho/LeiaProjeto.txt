@@ -1,0 +1,45 @@
+UMA NOITE DE TRABALHO.
+
+Uma noite de trabalho é um jogo onde o jogador assume o papel de um 
+Ladino (ladrão). Que adentra em mansões para roubar objetos de valor
+e revender a um receptor que pagará um determinado valor conforme o
+objeto ou item furtado.
+
+O objetivo deste programa é trabalhar com Estrutura de Dados, adentrando
+em ponteiros, structs, passagem de parametros, listas, filas, pilhas, 
+arvores e hash. A fim de aprimorar os estudos e se aprofundar, aprimorando
+as habilidades de desenvolvedor.
+
+Introdução
+Você é um ladrão e dos bons. Sua especialidade é roubar os ricos
+— “Não por uma questão de nobreza”, como costuma dizer, “é que os
+pobres não têm nada para se roubar!”
+Esta noite você está rondando uma parte da cidade particularmente
+rica. Você não vem aqui com freqüência; a entrada do bairro é muito
+bem vigiada. A grande chance surgiu esta noite, quando o vigia achou
+a garrafa de uísque que você deixou para ele. Você entrou furtivamente
+assim que ele adormeceu.
+A noite está esplêndida para um ladrão; a lua brilha quase tão
+intensamente quanto o sol. Você examina as janelas, enquanto desliza
+entre as sombras, e logo descobre uma que não está trancada. Enfia a
+lâmina de seu punhal no vão e levanta a aldrava.
+
+Funcionalidades desse projeto:
+
+- Criar aleatoriamente uma casa distribuindo os comodos numa arvore binaria.
+- Explorar os comodos desta casa em todas as direcoes, inclusive retornando.
+- Criar uma lista de Itens espalhados pela casa.
+- Esses itens precisam ser procurados pelo jogador e caso ele queira, poderar levar consigo
+- O jogador possuirá um sacola com capacidade maxima de itens
+- Ele pode encotrar um ou mais itens num comodo, e no maximo uma quantidade de itens.
+- Poderá existir itens valiosos ou não.
+- Haverá um guarda (num comodo aleatorio, execeção do hall inicialmente), e caso ouça algum
+barulho quando o jogador procurar os objetos (itens), o guarda se movimentará pela casa. 
+- Caso o jogador e o guarda estiverem no mesmo comodo, o jogador poderá fugir, se tiver
+sucesso o jogador escapa da casa com os objetos ja roubados, caso contrario é pego pelo
+guarda e game over.
+- Se o jogador sair da casa com itens (objetos), poderá saber o valor total do itens roubados
+numa pontuacao final.
+- Cada item possui seu valor.
+
+

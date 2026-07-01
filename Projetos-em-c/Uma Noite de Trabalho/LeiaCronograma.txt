@@ -1,0 +1,533 @@
+Agora está entrando em:
+
+* modelagem;
+* arquitetura;
+* gerenciamento de memória;
+* organização de sistemas;
+* fluxo de jogo.
+
+O mais importante agora é:
+
+# NÃO avançar de forma caótica.
+
+Estrutura de um plano realista e pedagógico, em ordem de dificuldade crescente, 
+para seguir como guia do projeto.
+
+---
+
+# VISÃO GERAL DO PROJETO
+
+O jogo será dividido em sistemas independentes.
+
+```text id="plano01"
+1. Casa (árvore binária)
+2. Navegação (pilha)
+3. Itens (lista encadeada)
+4. Inventário
+5. Loot procedural
+6. Guarda / IA
+7. Sistema de risco
+8. Pontuação final
+9. Refatoração e melhorias
+```
+
+---
+
+# FASE 1 — ESTRUTURA BASE DO JOGO
+
+# OBJETIVO:
+
+Construir a fundação.
+
+## Você já concluiu quase tudo aqui.
+
+---
+
+# ETAPA 1.1 — Organização do projeto
+
+## Objetivos:
+
+* separar funções;
+* entender responsabilidades;
+* organizar structs.
+
+## Conceitos:
+
+* modularização;
+* arquitetura;
+* protótipos.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 1.2 — Árvore binária da casa
+
+## Objetivos:
+
+* criar cômodos dinamicamente;
+* conectar cômodos;
+* gerar casa recursivamente.
+
+## Conceitos:
+
+* ponteiros;
+* recursividade;
+* árvore binária.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 1.3 — Exploração da casa
+
+## Objetivos:
+
+* navegar entre cômodos;
+* movimentação;
+* histórico.
+
+## Conceitos:
+
+* navegação;
+* controle de fluxo;
+* menus.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 1.4 — Pilha de navegação
+
+## Objetivos:
+
+* salvar caminhos anteriores;
+* permitir retorno.
+
+## Conceitos:
+
+* pilha dinâmica;
+* listas encadeadas;
+* malloc/free.
+
+## Status:
+
+✅ concluído
+
+---
+
+# FASE 2 — SISTEMA DE ITENS
+
+# OBJETIVO:
+
+Criar loot procedural e listas encadeadas.
+
+## Esta é sua fase atual.
+
+---
+
+# ETAPA 2.1 — Estrutura Item
+
+## Objetivos:
+
+* modelar itens;
+* criar enum qualidade;
+* criar lista encadeada.
+
+## Conceitos:
+
+* structs compostas;
+* enums;
+* ponteiros entre structs.
+
+## Status:
+
+✅ praticamente concluído
+
+---
+
+# ETAPA 2.2 — Criar item dinamicamente
+
+# SUA PRÓXIMA MISSÃO
+
+## Você deve criar:
+
+* `criarItem()`
+
+## Essa função deve:
+
+```text id="plano02"
+1. malloc
+2. preencher atributos
+3. proximo = NULL
+4. retornar ponteiro
+```
+
+## Conceitos:
+
+* alocação dinâmica;
+* inicialização;
+* retorno de ponteiros.
+
+## NÃO IMPLEMENTAR AINDA:
+
+* inventário;
+* transferência;
+* peso total.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 2.3 — Inserção na lista
+
+## Você criará:
+
+* `inserirItem()`
+
+## Objetivo:
+
+Adicionar itens ao cômodo.
+
+## Conceitos:
+
+* lista encadeada;
+* inserção no início;
+* manipulação de ponteiros.
+
+## Você aprenderá:
+
+```text id="plano03"
+novo->proximo = lista
+lista = novo
+```
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 2.4 — Listar itens
+
+## Você criará:
+
+* `listarItens()`
+
+## Objetivos:
+
+Mostrar:
+
+* tipo;
+* qualidade;
+* peso;
+* quantidade;
+* valor total.
+
+## Conceitos:
+
+* travessia de lista;
+* loops com ponteiros.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 2.5 — Gerador procedural de itens
+
+## Você criará:
+
+* `gerarItemAleatorio()`
+
+## Objetivos:
+
+Sortear:
+
+* tipo;
+* qualidade;
+* quantidade;
+* valor.
+
+## Conceitos:
+
+* aleatoriedade;
+* tabelas de loot;
+* geração procedural.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 2.6 — Inserir itens nos cômodos
+
+## Você criará:
+
+* `gerarItensComodo()`
+
+## Objetivos:
+
+Cada cômodo receber:
+
+* 1 ou 2 itens inicialmente.
+
+## Conceitos:
+
+* composição;
+* integração entre sistemas.
+
+## Status:
+
+✅ concluído
+---
+
+# FASE 3 — INVENTÁRIO DO JOGADOR
+
+# OBJETIVO:
+
+Criar a sacola.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 3.1 — Estrutura Jogador
+
+## Você criará:
+
+```text id="plano04"
+posição atual
+inventário
+peso máximo
+slots
+```
+
+## Conceitos:
+
+* agregação;
+* structs complexas.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 3.2 — Transferência de itens
+
+# ETAPA MAIS IMPORTANTE DO PROJETO
+
+## Objetivos:
+
+Mover item:
+
+```text id="plano05"
+cômodo -> sacola
+```
+
+## Conceitos:
+
+* remoção em lista;
+* reaproveitamento de nós;
+* ponteiros anteriores.
+
+## Aqui você aprenderá:
+
+verdadeira manipulação de listas.
+
+## Status:
+
+✅ concluído
+
+---
+
+# ETAPA 3.3 — Limites da sacola
+
+## Objetivos:
+
+Controlar:
+
+* peso;
+* quantidade;
+* slots.
+
+## Conceitos:
+
+* validação;
+* cálculos dinâmicos.
+
+## Status:
+
+✅ concluído
+
+---
+
+# FASE 4 — SISTEMA DE RISCO
+
+# OBJETIVO:
+
+Adicionar tensão ao jogo.
+
+---
+
+# ETAPA 4.1 — Sistema de barulho
+
+## Objetivos:
+
+Itens podem gerar ruído.
+
+## Conceitos:
+
+* probabilidade;
+* eventos aleatórios.
+
+---
+
+# ETAPA 4.2 — Guarda
+
+## Objetivos:
+
+Criar NPC inimigo.
+
+## Conceitos:
+
+* IA simples;
+* movimentação;
+* estados.
+
+---
+
+# ETAPA 4.3 — Fila do guarda
+
+## Objetivos:
+
+Movimentação automática.
+
+## Conceitos:
+
+* filas;
+* processamento sequencial.
+
+---
+
+# FASE 5 — GAMEPLAY COMPLETO
+
+# OBJETIVO:
+
+Transformar sistemas em jogo.
+
+---
+
+# ETAPA 5.1 — Vitória e derrota
+
+## Objetivos:
+
+* fugir;
+* captura;
+* game over.
+
+---
+
+# ETAPA 5.2 — Pontuação final
+
+## Objetivos:
+
+Somar:
+
+* loot;
+* raridade;
+* eficiência.
+
+---
+
+# ETAPA 5.3 — Rejogabilidade
+
+## Objetivos:
+
+Cada partida:
+
+* diferente;
+* procedural.
+
+---
+
+# FASE 6 — REFATORAÇÃO
+
+# OBJETIVO:
+
+Melhorar arquitetura.
+
+---
+
+# ETAPA 6.1 — Separar arquivos
+
+## Objetivos:
+
+Criar:
+
+```text id="plano06"
+item.c
+item.h
+arvore.c
+pilha.c
+```
+
+## Conceitos:
+
+* modularização real.
+
+---
+
+# ETAPA 6.2 — Melhorias de código
+
+## Objetivos:
+
+* remover repetição;
+* melhorar nomes;
+* organizar responsabilidades.
+
+---
+
+# FASE 7 — EXTRA (AVANÇADO)
+
+---
+
+# IDEIAS FUTURAS
+
+## Sistema de visão
+
+O guarda pode enxergar.
+
+---
+
+## Sistema de tempo
+
+A noite acaba.
+
+---
+
+## Itens especiais
+
+Chaves, mapas, ferramentas.
+
+---
+
+## Hash
+
+Catálogo rápido de itens.
+
+---
+
+

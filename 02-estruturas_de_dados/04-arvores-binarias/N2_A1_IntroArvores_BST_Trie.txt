@@ -1,0 +1,26 @@
+# Introdução a árvores binárias de busca e tries
+
+    - Exemplos: VSY (Binary Search Tree), AVL (variante balanceada da BST)
+    e Trie (árvores de prefixos para strings).
+
+    - BST: Busca, inserção e exclusão rápidas de elementos numericos ou 
+    ordenáveis.
+    
+    - AVL: Garante alta eficiencia mesmo após muitas inserções e remoções,
+    mantendo a árvore sempre balanceada.
+
+    - Trie: Busca extremamente eficiente de palavras e orefixos, ideal 
+    para manipulação de strings em grandes volumes.
+
+- BST (Árvore Binaria de Busca): 
+    - Cada nó: valores menores à esquerda, maiores à direita.
+    - Operações (busca, inserção, remoção) com eficiencia media
+    O(log n) se a arvore estiver balanceada.
+    - Pode perder eficiencia e se tornar uma lista encadeada se
+    os dados forem inseridos em ordem desfavorável.
+
+Exemplos práticos:
+    - BST: Armazenamento de valores ordenáveis, como IDs ou nomes.
+    - Trie: Autocomplementar em buscadores, validação de palavras
+        em editores de teso, compressão de dados em padrões de prefixo.
+
